@@ -13,9 +13,10 @@ export class AiError extends Error {}
 export async function askGemini(system: string, user: string): Promise<AgentOut> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new AiError("AI is not configured (GEMINI_API_KEY missing).");
-  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: "POST",
+    signal: AbortSignal.timeout(25000),
     headers: { "content-type": "application/json", "x-goog-api-key": key },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: system }] },
