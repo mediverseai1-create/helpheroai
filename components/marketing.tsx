@@ -15,8 +15,9 @@ export function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         <Logo />
         <nav aria-label="Main" className="hidden gap-7 text-sm font-medium md:flex">
-          <Link href="/#product">Product</Link>
-          <Link href="/#how">How it works</Link>
+          <Link href="/product/inbox">Inbox</Link>
+          <Link href="/product/agent">Hero Agent</Link>
+          <Link href="/product/knowledge-hub">Knowledge Hub</Link>
           <Link href="/pricing">Pricing</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -39,7 +40,9 @@ export function Footer() {
         </div>
         <div className="space-y-2 text-sm">
           <p className="font-semibold">Product</p>
-          <Link className="block text-paper/60" href="/#product">Features</Link>
+          <Link className="block text-paper/60" href="/product/inbox">Inbox</Link>
+          <Link className="block text-paper/60" href="/product/agent">Hero Agent</Link>
+          <Link className="block text-paper/60" href="/product/knowledge-hub">Knowledge Hub</Link>
           <Link className="block text-paper/60" href="/pricing">Pricing</Link>
         </div>
         <div className="space-y-2 text-sm">

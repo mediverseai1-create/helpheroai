@@ -11,6 +11,8 @@ const modules = [
   { t: "Reports", d: "Volume, AI resolution rate and handoffs, calculated from your real conversations." },
 ];
 
+const links: Record<string, string> = { "Shared inbox": "/product/inbox", "Hero Agent": "/product/agent", "Knowledge Hub": "/product/knowledge-hub" };
+
 const faqs = [
   ["Does the AI make things up?", "Hero Agent answers only from the articles you write. If nothing relevant is found, or its confidence is below 60%, the conversation goes to your team instead."],
   ["What counts as an AI reply?", "Each answer Hero Agent generates counts toward your plan's monthly allowance, including tests in the dashboard. When the allowance is used up, chats go to your team rather than being billed extra."],
@@ -72,6 +74,7 @@ export default function Home() {
             <div key={m.t} className="card">
               <h3 className="text-lg font-semibold">{m.t}</h3>
               <p className="mt-2 text-sm text-ink/70">{m.d}</p>
+              {links[m.t] && <Link href={links[m.t]} className="mt-3 inline-block text-sm font-semibold text-hero underline">Learn more</Link>}
             </div>
           ))}
         </div>
