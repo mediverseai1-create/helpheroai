@@ -13,9 +13,9 @@ export interface Plan {
 // Placeholder pricing: confirm before launch.
 export const PLANS: Record<PlanId, Plan> = {
   trial: { id: "trial", name: "Free trial", priceMonthly: null, priceAnnualPerMonth: null, seats: 2, aiRepliesPerMonth: 50, features: ["14 days", "No card required"] },
-  starter: { id: "starter", name: "Starter", priceMonthly: 29, priceAnnualPerMonth: 24, seats: 2, aiRepliesPerMonth: 200, features: ["Shared inbox", "Hero Agent", "Public help center", "Chat page"] },
-  growth: { id: "growth", name: "Growth", priceMonthly: 89, priceAnnualPerMonth: 74, seats: 6, aiRepliesPerMonth: 1500, features: ["Everything in Starter", "Draft replies for agents", "Reports", "Priority support"] },
-  scale: { id: "scale", name: "Scale", priceMonthly: 199, priceAnnualPerMonth: 165, seats: 20, aiRepliesPerMonth: 6000, features: ["Everything in Growth", "20 seats", "6,000 AI replies", "Onboarding call"] },
+  starter: { id: "starter", name: "Starter", priceMonthly: 29, priceAnnualPerMonth: 24, seats: 2, aiRepliesPerMonth: 200, features: ["Shared inbox with statuses and replies", "Hero Agent grounded in your Knowledge Hub", "Draft replies with AI", "Public help center and chat page", "Reports: volume and AI resolution rate", "Email support"] },
+  growth: { id: "growth", name: "Growth", priceMonthly: 89, priceAnnualPerMonth: 74, seats: 6, aiRepliesPerMonth: 1500, features: ["Everything in Starter", "3x the seats of Starter", "Over 7x the monthly AI replies of Starter", "Hero Agent test console", "Conversation reports by day", "Priority email support"] },
+  scale: { id: "scale", name: "Scale", priceMonthly: 199, priceAnnualPerMonth: 165, seats: 20, aiRepliesPerMonth: 6000, features: ["Everything in Growth", "Over 3x the seats of Growth", "4x the monthly AI replies of Growth", "Built for high-volume support queues", "Priority support", "Onboarding call"] },
 };
 
 export const PAID_PLANS: PlanId[] = ["starter", "growth", "scale"];
