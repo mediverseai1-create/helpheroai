@@ -19,7 +19,7 @@ const faqs = [
   ["Do I need a credit card to start?", "No. Every workspace starts with a 14-day trial and no card."],
   ["Can customers reach us without a website widget?", "Yes. Every workspace gets a hosted chat page and help center you can link to from anywhere."],
   ["Which channels are supported?", "Today: hosted chat and the help center. Email and messaging channels are on the roadmap, not live."],
-  ["How is billing handled?", "Plans change only after the payment provider confirms payment. Returning from checkout never unlocks a plan by itself."],
+  ["How is billing handled?", "Plans change only after we confirm your payment. Returning from checkout never unlocks a plan by itself."],
 ];
 
 function Section({ id, eyebrow, title, intro, children, tone }: { id?: string; eyebrow: string; title: string; intro?: string; children?: React.ReactNode; tone?: "sand" | "ink" }) {

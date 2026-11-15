@@ -25,3 +25,13 @@ Import the repo, add all env vars from `.env.example`, deploy. Set `NEXT_PUBLIC_
 
 ## Not included in v1
 Email/SMS/WhatsApp channels, workflows, outbound messages, team invites, file uploads, per-seat enforcement, rate limiting on the public chat endpoint (add before public launch), and a provider-specific payment webhook.
+
+## Selar payments and manual activation
+Plans: Starter $47, Growth $57, Scale $97 per month, paid through Selar links (defaults in `lib/plans.ts`, overridable with `NEXT_PUBLIC_PAYMENT_LINK_*_MONTHLY`). No annual plans yet.
+Selar's payment confirmations are not wired into the webhook, so activation is a trusted admin step: after verifying the payment in your Selar dashboard, run in the Supabase SQL editor:
+
+```sql
+update organizations set plan = 'growth', subscription_status = 'active' where slug = 'customer-slug';
+```
+
+Set `subscription_status = 'canceled'` when a customer stops paying. If you want automatic activation, a Selar-specific webhook adapter can be added once Selar's webhook format and signing method are confirmed.

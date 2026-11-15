@@ -17,7 +17,7 @@ const faqs = [
   ["How does the free trial work?", "Every new workspace gets 14 days with 2 seats and 50 AI replies. No card is needed."],
   ["What happens if we use all our AI replies?", "New chats go straight to your team. You are never charged extra for AI replies."],
   ["Can I change plans?", "Yes. Pay for the plan you want from the Billing page. To downgrade or cancel, contact support."],
-  ["When does my plan change after I pay?", "When the payment provider confirms the payment to us, usually within a minute. Returning from checkout alone changes nothing."],
+  ["When does my plan change after I pay?", "Once we confirm your payment, after you contact support with your workspace name and payment email. Returning from checkout alone changes nothing."],
   ["What is a seat?", "A teammate who can sign in and work the inbox."],
 ];
 
@@ -36,7 +36,6 @@ export default function Pricing() {
               <div key={id} className={`card flex flex-col ${hl ? "border-2 border-hero" : ""}`}>
                 <h2 className="text-xl font-semibold">{p.name}</h2>
                 <p className="mt-3 text-4xl font-bold">${p.priceMonthly}<span className="text-base font-normal text-ink/60"> /month</span></p>
-                <p className="text-sm text-ink/60">or ${p.priceAnnualPerMonth}/month billed annually</p>
                 <ul className="mt-5 flex-1 space-y-2 text-sm">
                   <li className="font-semibold">{p.seats} seats</li>
                   <li className="font-semibold">{p.aiRepliesPerMonth.toLocaleString()} AI replies / month</li>
@@ -69,7 +68,6 @@ export default function Pricing() {
             <tbody>
               {[
                 ["Price per month", (id: (typeof PAID_PLANS)[number]) => `$${PLANS[id].priceMonthly}`],
-                ["Price per month, annual", (id: (typeof PAID_PLANS)[number]) => `$${PLANS[id].priceAnnualPerMonth}`],
                 ["Seats", (id: (typeof PAID_PLANS)[number]) => String(PLANS[id].seats)],
                 ["AI replies per month", (id: (typeof PAID_PLANS)[number]) => PLANS[id].aiRepliesPerMonth.toLocaleString()],
                 ["Support", (id: (typeof PAID_PLANS)[number]) => (id === "starter" ? "Email" : id === "growth" ? "Priority email" : "Priority + onboarding call")],
@@ -82,7 +80,7 @@ export default function Pricing() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-xs text-ink/50">Prices and limits shown are launch placeholders and may change before general availability.</p>
+        <p className="mt-4 text-xs text-ink/50">Prices are in USD per month. Limits may change before general availability.</p>
       </section>
 
       <section className="bg-sand py-16">

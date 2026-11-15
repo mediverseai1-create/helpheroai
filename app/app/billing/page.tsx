@@ -33,14 +33,14 @@ export default async function Billing() {
               <p className="text-2xl font-bold">${p.priceMonthly}<span className="text-sm font-normal text-ink/60">/mo</span></p>
               <p className="text-xs text-ink/60">{p.seats} seats · {p.aiRepliesPerMonth.toLocaleString()} AI replies</p>
               <div className="mt-4 space-y-2">
-                {m ? <a className="btn-primary w-full" href={withRef(m, org.id)}>Pay monthly</a> : <p className="text-xs text-ink/50">Monthly payment link not configured.</p>}
+                {m ? <a className="btn-primary w-full" href={withRef(m, org.id)}>Pay for {p.name}</a> : <p className="text-xs text-ink/50">Payment link not configured.</p>}
                 {a && <a className="btn-ghost w-full" href={withRef(a, org.id)}>Pay annually (${p.priceAnnualPerMonth}/mo)</a>}
               </div>
             </div>
           );
         })}
       </div>
-      <p className="mt-6 text-sm text-ink/60">Your plan changes only after payment is confirmed by our payment provider. Returning from checkout does not unlock anything by itself; confirmation usually arrives within a minute. To change or cancel a plan, contact support.</p>
+      <p className="mt-6 text-sm text-ink/60">Your plan changes only after we confirm your payment. Returning from checkout does not unlock anything by itself. After paying, contact support with your workspace name and payment email so we can activate your plan. To change or cancel a plan, contact support.</p>
     </div>
   );
 }
